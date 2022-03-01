@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
             try {
                 let decoded = JSON.parse(atob(jwt.split(".")[1]))
                 if (new Date() < new Date(decoded.exp * 1000)) {
-                    setUser(decoded.id)
+                    setUser(decoded.manager_id)
                 } else {
                     setUser(null)
                 }
